@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
 
 	cout << "Now checking *argv[1] : " << *argv[1] << endl;
 
-	if (stoi(argv[1]) == 1)
+	if (*argv[1])
 	{
 		cout << "Currently in case" << endl;
 		test1();
@@ -31,11 +31,16 @@ void test1()
 {
 	cout << "\n\n---------- TEST 1 ----------\n" << endl;
 
-	cout << "Initializing empty vector and testing" << endl;
+	cout << "Initializing empty vector and testing\n" << endl;
 	Vector testVector;
 
+	cout << "Now Testing using print_x and print_y" << endl;
 	cout << "x and y components should be 0 and 0, respectively" << endl;
 
 	testVector.print_x(); 
 	testVector.print_y();
+
+	cout << "\n\nNow Testing using print function" << endl;
+	testVector.print();
+ 
 }

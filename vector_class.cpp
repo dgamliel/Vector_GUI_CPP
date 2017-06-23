@@ -8,15 +8,46 @@ namespace vector_class{
 	//Constructor
 	Vector::Vector(double x, double y)
 	{
-		double* data = new double[2];
+		data = new double[2];
 		data[0] = x;
 		data[1] = y;
 	}
 
+	//Destructor
 	Vector::~Vector()
 	{
 		delete data;
+	};
+
+	//Value Semantics
+	Vector& Vector::operator=(const Vector& source)
+	{
+		if (this == &source)
+		{
+			return *this;
+		}
+
+		this->data[0] = source.data[0];
+		this->data[1] = source.data[1];
+
+		return *this;
 	}
+
+	Vector::Vector(const Vector& source) 
+	{
+		if (this == &source)
+		{
+			return;
+		}
+
+		else
+		{
+			data = new double[2];
+			data[0] = source.data[0];
+			data[1] = source.data[1];
+		}
+	};
+
 
 	double Vector::mag () const
 	{

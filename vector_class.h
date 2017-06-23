@@ -9,6 +9,10 @@ namespace vector_class{
 			Vector(double x = 0, double y = 0);
 			~Vector();
 
+			//Value semantics
+			Vector& operator=(const Vector& source);
+			Vector(const Vector& source);
+
 			//Const funcs
 			int get_x() const {return data[0]; };
 			int get_y() const {return data[1];  };
