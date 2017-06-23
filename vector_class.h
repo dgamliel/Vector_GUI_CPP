@@ -13,6 +13,9 @@ namespace vector_class{
 			Vector& operator=(const Vector& source);
 			Vector(const Vector& source);
 
+			// [] Operator
+			double operator[](int index){return data[index];};
+
 			//Const funcs
 			int get_x() const {return data[0]; };
 			int get_y() const {return data[1];  };

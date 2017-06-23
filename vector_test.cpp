@@ -14,6 +14,7 @@ int main(int argc, char* argv[])
 	void test3();
 	void test4();
 	void test5();
+	void test6();
 	
 	//Checks how many arguments passed
 	if (argc != 2)
@@ -43,6 +44,17 @@ int main(int argc, char* argv[])
 	{
 		test4();
 	}
+
+	if (input == 5)
+	{
+		test5();
+	}
+
+	if (input == 6)
+	{
+		test6();
+	}
+
 	return 0;
 }
 
@@ -133,4 +145,45 @@ void test4()
 	naught.print();
 
 	cout << "\nFINISHED : TEST 4\n" << endl;
+}
+
+void test5()
+{
+	cout << "\n---------- TEST 5 ----------\n" << endl;
+	cout << "Now testing '*' operator : " << endl;
+	cout << "\nInitializing vectors v1, v2, v3 : (1,1), (2,2), (3,3)"  << endl;
+	Vector v1(1,1), v2(2,2), v3(3,3);
+
+	cout << "\nNow attempting to mult 3 * v1 - EXPECTED RESULT : (3,3)" << endl;
+	Vector v4 = 3 * v1;
+	v4.print();
+
+	cout << "\nNow attempting to mult 1/2 * v2  - EXPECTED RESULT : (1,1)" << endl;
+	Vector v5 = 0.5 * v2;
+	v5.print();
+
+	cout << "\nNow checking Zero Product Property: 0 * (x,y) - EXPECTED RESULT : (0,0)" << endl;
+	Vector naught = 0 * v3;
+	naught.print();
+
+	cout << "\nFINISHED : TEST 5\n" << endl;
+}
+
+void test6()
+{
+	cout << "\n---------- TEST 6 ----------\n" << endl;
+	cout << "Now testing [] operator : " << endl;
+
+	cout << "\nInitializing 3 vectors and testing their [] operators :\n" << endl;
+	Vector v1(3,-2.6), v2(51.1111, -200), v3(0,0);
+	Vector list[] = {v1, v2, v3};
+
+	//cout << v1[0] << endl;
+	for (Vector v : list)
+	{
+		cout << "x value is : " << v[0] << endl;
+		cout << "y value is : " << v[1] << endl;
+		cout << endl;
+	}
+
 }
