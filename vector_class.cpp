@@ -83,4 +83,9 @@ namespace vector_class{
 		return returnVec;
 	}
 
+	bool operator == (const Vector& v1, const Vector& v2)
+	{
+		return (v1.data[0] == v2.data[0] && v1.data[1] == v2.data[1]);
+	}
+
 }

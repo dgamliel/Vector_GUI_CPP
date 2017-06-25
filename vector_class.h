@@ -35,6 +35,7 @@ namespace vector_class{
 			//Overloaded Operators
 			friend Vector operator+ (const Vector& v1, const Vector& v2);
 			friend Vector operator* (double lambda, const Vector& v1);
+			friend bool   operator== (const Vector& v1, const Vector& v2);
 
 		private:
 			double* data;	
